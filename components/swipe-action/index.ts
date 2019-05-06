@@ -159,6 +159,11 @@ Component({
           leftPos: newLeftPos,
           swiping: false,
         });
+
+        const { index, onSwipeEnd } = this.props;
+        if (onSwipeEnd) {
+          onSwipeEnd({index, newLeftPos });
+        }
       }
     },
     onChange() {
